@@ -115,10 +115,17 @@ const Datasets = () => {
         <div className="lg:col-span-2">
           <Card>
             <CardHeader>
-              <CardTitle>Your Datasets</CardTitle>
-              <CardDescription>
-                Manage uploaded training datasets
-              </CardDescription>
+              <div className="flex items-center justify-between">
+                <div>
+                  <CardTitle>Your Datasets</CardTitle>
+                  <CardDescription>
+                    Manage uploaded training datasets
+                  </CardDescription>
+                </div>
+                <Badge variant="outline" className="text-xs font-mono">
+                  #TABLE_RENDER_API
+                </Badge>
+              </div>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">

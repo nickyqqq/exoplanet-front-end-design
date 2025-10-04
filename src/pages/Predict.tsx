@@ -148,10 +148,17 @@ const Predict = () => {
         <div>
           <Card>
             <CardHeader>
-              <CardTitle>Prediction Results</CardTitle>
-              <CardDescription>
-                Classification output and confidence metrics
-              </CardDescription>
+              <div className="flex items-center justify-between">
+                <div>
+                  <CardTitle>Prediction Results</CardTitle>
+                  <CardDescription>
+                    Classification output and confidence metrics
+                  </CardDescription>
+                </div>
+                <Badge variant="outline" className="text-xs font-mono">
+                  #PREDICTION_API
+                </Badge>
+              </div>
             </CardHeader>
             <CardContent>
               {!prediction && !isLoading && (

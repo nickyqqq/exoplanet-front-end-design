@@ -1,5 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Badge } from "@/components/ui/badge";
 import { BarChart3, LineChart, PieChart, TrendingUp } from "lucide-react";
 
 const Visualize = () => {
@@ -21,25 +22,7 @@ const Visualize = () => {
         </TabsList>
 
         <TabsContent value="lightcurve" className="space-y-6">
-          <div className="grid lg:grid-cols-2 gap-6">
-            <Card>
-              <CardHeader>
-                <CardTitle>Folded Light Curve</CardTitle>
-                <CardDescription>
-                  Transit signal folded at orbital period
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
-                  <div className="text-center text-muted-foreground">
-                    <LineChart className="h-16 w-16 mx-auto mb-3 opacity-50" />
-                    <p className="text-sm">Folded light curve visualization</p>
-                    <p className="text-xs mt-1">Backend integration: renderLightCurve()</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
+          <div className="grid lg:grid-cols-1 gap-6">
             <Card>
               <CardHeader>
                 <CardTitle>Transit Model Fit</CardTitle>
@@ -119,6 +102,11 @@ const Visualize = () => {
         </TabsContent>
 
         <TabsContent value="metrics" className="space-y-6">
+          <div className="flex justify-end mb-4">
+            <Badge variant="outline" className="text-xs font-mono">
+              #METRICS_TABLE_API
+            </Badge>
+          </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { label: "Accuracy", value: "94.2%", icon: TrendingUp },
